@@ -15,12 +15,13 @@ def get_ip_address():
     s.connect(("8.8.8.8", 80))
     return s.getsockname()[0]
 
+
+username=getpass.getuser()
+separator="/"
+
 ip_adress = get_ip_address() # current ip 
 cur_dir=os.getcwd() # current dir 
-username=getpass.getuser()
 git_dir="/home/"+ username +"/git"
-
-separator="/"
 
 print(ip_adress)
 os.chdir(git_dir+separator+"rpi_ip_adress_auto_commit") # change dir
