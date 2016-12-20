@@ -44,3 +44,6 @@ fp.write(
 fp.close()
 
 
+os.chdir(git_dir)
+os.system("git pull")
+
