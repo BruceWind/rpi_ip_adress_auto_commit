@@ -23,7 +23,7 @@ git_dir="/home/"+ username +"/git"
 separator="/"
 
 print(ip_adress)
-os.chdir(git_dir+separator+"rpi_ip_adress_auto_commit") # change dir
+os.chdir(git_dir+"/+"rpi_ip_adress_auto_commit") # change dir
 
 fp = open('ip.txt', 'w') 
 fp.write(ip_adress) 
