@@ -28,7 +28,7 @@ print(ip_adress)
 os.chdir(git_dir+separator+"rpi_ip_adress_auto_commit") # change dir
 
 fp = open('ip.txt', 'w') 
-fp.write(ip_adress) 
+fp.write(ip_adress+"\n") 
 fp.close()
 
 os.system('git add -A')
