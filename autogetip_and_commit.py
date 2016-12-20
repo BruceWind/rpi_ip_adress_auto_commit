@@ -1,3 +1,12 @@
+
+#!/usr/bin/env python3
+# Note:
+#   Please save this as diagnostic_firstname.txt
+#       (replace firstname w/ yours)
+#   Do not edit lines that say: "# Last line in ____"
+###############################################################################
+# Imports  # there will only be two imports added here.
+
 import socket
 import os
 
