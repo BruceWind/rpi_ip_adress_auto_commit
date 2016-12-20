@@ -7,7 +7,7 @@ import socket
 import os
 import getpass
 
-
+import time
 
 
 def get_ip_address():
@@ -21,8 +21,6 @@ separator="/"
 
 ip_adress = get_ip_address() # current ip 
 cur_dir=os.getcwd() # current dir 
-
-
 git_dir="/home/"+ username +"/git"
 
 print(ip_adress)
@@ -33,7 +31,9 @@ fp.write(ip_adress)
 fp.close()
 
 os.system('git add -A')
+time.sleep(3)
 os.system('git commit -m \'ip commit\'')
+import time
 os.system('git push')
 
 
