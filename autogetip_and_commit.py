@@ -33,7 +33,7 @@ fp.close()
 
 os.system('git add -A')
 
-os.system('git commit -m \'ip commit\'')
+os.system('git commit -m \'ip commit on raspberry\'')
 
 os.system('git push')
 
