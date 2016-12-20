@@ -15,6 +15,7 @@ def get_ip_address():
     s.connect(("8.8.8.8", 80))
     return s.getsockname()[0]
 
+time.sleep(5)
 
 username=getpass.getuser()
 separator="/"
@@ -31,9 +32,9 @@ fp.write(ip_adress)
 fp.close()
 
 os.system('git add -A')
-time.sleep(3)
+
 os.system('git commit -m \'ip commit\'')
-time.sleep(3)
+
 os.system('git push')
 
 
