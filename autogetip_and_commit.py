@@ -44,27 +44,27 @@ separator = "/"
 if(is_valid):
     print "start ping ....."
     ping_githost()
-    time.sleep(2)
+    # time.sleep(2)
     print "get ip address ....."
     ip_adress = get_ip_address()  # current ip
-    time.sleep(2)
+    # time.sleep(2)
     cur_dir = os.getcwd()  # current dir
     git_dir = "/home/" + username + "/git"
 
     print("\t IP and Time:"+ip_adress+" "+ get_current_time()+"\n")
     print "move dir   to gitdir ....."
     os.chdir(git_dir + separator + "rpi_ip_adress_auto_commit")  # change dir
-    time.sleep(2)
+    # time.sleep(2)
 
     print "git pull"
     os.system('git pull')
-    time.sleep(2)
+    # time.sleep(2)
 
     print "write ip to ip.txt"
     fp = open('ip.txt', 'w')
     fp.write(ip_adress +" "+ get_current_time()+"\n")
     fp.close()
-    time.sleep(2)
+    time.sleep(1)
 
     print "git commit  push"
     os.system('git add -A')
@@ -73,5 +73,8 @@ if(is_valid):
 
     time.sleep(2)
     os.system('git push')
+
+    print "git push finish!!"
+    time.sleep(8)
 else:
     print('can\'t be  commit to github!\n\t无法提交到github!')
