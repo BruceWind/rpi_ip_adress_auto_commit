@@ -28,15 +28,14 @@ def internet_on():
         urllib2.urlopen('http://baidu.com', timeout=1)
         return True
     except urllib2.URLError as err:
+        print "network not connected!!"
         return False
 
 i = 1
 while(i <= 10):
-    # if(is_connected_network()==1):
-    #     i=11
     is_valid=(internet_on())
-    print (returns)
-    print i
+    if(is_valid):
+        i=11
     time.sleep(3)
     i += 1
 
