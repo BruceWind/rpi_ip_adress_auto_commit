@@ -24,7 +24,7 @@ def internet_on():
         urllib2.urlopen('http://baidu.com', timeout=1)
         return True
     except urllib2.URLError as err:
-        print "network not connected!!\n 网络没连接！！"
+        print "\tnetwork not connected!!\n\t网络没连接！！\n"
         return False
 
 i = 1
@@ -37,22 +37,24 @@ while(i <= 10):
 
 username = getpass.getuser()
 separator = "/"
+if(is_valid):
+    ip_adress = get_ip_address()  # current ip
+    cur_dir = os.getcwd()  # current dir
+    git_dir = "/home/" + username + "/git"
 
-ip_adress = get_ip_address()  # current ip
-cur_dir = os.getcwd()  # current dir
-git_dir = "/home/" + username + "/git"
+    print("\t IP and Time:"+ip_adress+" "+ get_current_time()+"\n")
+    os.chdir(git_dir + separator + "rpi_ip_adress_auto_commit")  # change dir
 
-print(ip_adress+" "+ get_current_time()+"\n")
-os.chdir(git_dir + separator + "rpi_ip_adress_auto_commit")  # change dir
+    os.system('git pull')
 
-os.system('git pull')
+    fp = open('ip.txt', 'w')
+    fp.write(ip_adress +" "+ get_current_time()+"\n")
+    fp.close()
 
-fp = open('ip.txt', 'w')
-fp.write(ip_adress +" "+ get_current_time()+"\n")
-fp.close()
+    os.system('git add -A')
 
-os.system('git add -A')
+    os.system("git commit -m \'ip commit on " + socket.gethostname() + "\'")
 
-os.system("git commit -m \'ip commit on " + socket.gethostname() + "\'")
-
-os.system('git push')
+    os.system('git push')
+else:
+    print('can\'t be  commit to github')
