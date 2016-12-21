@@ -34,7 +34,7 @@ i = 1
 while(i <= 10):
     is_valid=(internet_on())
     if(is_valid):
-        i=11
+        i=15
     time.sleep(3)
     i += 1
 
