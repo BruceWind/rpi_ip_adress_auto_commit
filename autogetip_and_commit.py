@@ -3,6 +3,7 @@
 ###############################################################################
 
 
+import sys
 import socket
 import os
 import getpass
@@ -49,7 +50,11 @@ while (i <= 15):
     i += 1
 
 # need some field
-username = getpass.getuser()
+
+if(len(sys.argv)>1):  # if have input a name
+    username = (""+sys.argv[1])
+else:
+    username = getpass.getuser()
 separator = "/"
 
 if (is_valid):
