@@ -32,10 +32,10 @@ os.chdir(autostart_dir)
 fp = open('auto_commit_ip_address2github.desktop', 'w') 
 fp.write(
 "[Desktop Entry] "+"\n"+
-" Name=ScanTest "+"\n"+
+" Name=auto_push_ip "+"\n"+
 " Comment=My Python Program "+"\n"+
 " Exec=python "+git_dir+"/autogetip_and_commit.py" +"\n"+
-"Terminal=true"+"\n"+
+"Terminal=false"+"\n"+
 "MultipleArgs=false"+"\n"+
 "Type=Application"+"\n"+
 "Categories=Application;Development;"+"\n"+
