@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # @weizongwei5
 ###############################################################################
 
@@ -19,16 +19,12 @@ def get_current_time():
     ISOTIMEFORMAT ='%Y-%m-%d %X'
     return time.strftime(ISOTIMEFORMAT, time.localtime())
 
-def is_connected_network():
-    return  os.system('ping 8.8.8.8 -c 2')
-
-
 def internet_on():
     try:
         urllib2.urlopen('http://baidu.com', timeout=1)
         return True
     except urllib2.URLError as err:
-        print "network not connected!!"
+        print "network not connected!!\n 网络没连接！！"
         return False
 
 i = 1
