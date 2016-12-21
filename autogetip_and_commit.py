@@ -61,4 +61,4 @@ if(is_valid):
 
     os.system('git push')
 else:
-    print('can\'t be  commit to github')
+    print('can\'t be  commit to github!\n\t无法提交到github!')
