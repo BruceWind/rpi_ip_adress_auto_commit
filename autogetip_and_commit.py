@@ -23,8 +23,9 @@ def is_connected_network():
 
 i = 1
 while(i <= 10):
-    if(is_connected_network()):
-        i=11
+    # if(is_connected_network()==1):
+    #     i=11
+    i = 11
     print i
     time.sleep(3)
     i += 1
