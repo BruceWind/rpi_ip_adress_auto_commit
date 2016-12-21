@@ -7,6 +7,7 @@ import socket
 import os
 import getpass
 import time
+import urllib2
 
 
 def get_ip_address():
@@ -21,11 +22,20 @@ def get_current_time():
 def is_connected_network():
     return  os.system('ping 8.8.8.8 -c 2')
 
+
+def internet_on():
+    try:
+        urllib2.urlopen('http://baidu.com', timeout=1)
+        return True
+    except urllib2.URLError as err:
+        return False
+
 i = 1
 while(i <= 10):
     # if(is_connected_network()==1):
     #     i=11
-    i = 11
+    is_valid=(internet_on())
+    print (returns)
     print i
     time.sleep(3)
     i += 1
