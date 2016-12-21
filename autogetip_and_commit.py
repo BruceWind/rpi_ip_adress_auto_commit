@@ -15,7 +15,7 @@ def get_ip_address():
     return s.getsockname()[0]
 
 def getCurrentTime():
-    ISOTIMEFORMAT ='%Y-%m-%d%X'
+    ISOTIMEFORMAT ='%Y-%m-%d %X'
     return time.strftime(ISOTIMEFORMAT, time.localtime());
 
 time.sleep(5)
