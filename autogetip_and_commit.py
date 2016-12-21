@@ -31,11 +31,11 @@ def internet_on():
         return False
 
 i = 1
-while(i <= 10):
+while(i <= 15):
     is_valid=(internet_on())
     if(is_valid):
-        i=11
-    time.sleep(3)
+        i=15
+    time.sleep(4)
     i += 1
 # field
 username = getpass.getuser()
