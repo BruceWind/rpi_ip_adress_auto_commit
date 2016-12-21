@@ -9,6 +9,9 @@ import getpass
 import time
 import urllib2
 
+### ping 的过程仅仅为了解决 偶现的 github 域名解析问题的情况
+def ping_githost():
+    os.system("ping -c 2 -w 3 github.com")# ping github 2次 超时3秒
 
 def get_ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -38,6 +41,7 @@ while(i <= 10):
 username = getpass.getuser()
 separator = "/"
 if(is_valid):
+    ping_githost()
     ip_adress = get_ip_address()  # current ip
     cur_dir = os.getcwd()  # current dir
     git_dir = "/home/" + username + "/git"
